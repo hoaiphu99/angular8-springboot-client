@@ -20,6 +20,7 @@ export class UserListComponent implements OnInit {
 
   reloadData() {
     this.users = this.userService.getUserList();
+    console.log(this.users);
   }
 
   deleteUser(id: number) {

@@ -26,6 +26,7 @@ export class UserService {
   }
 
   getUserList(): Observable<any> {
+    console.log('getUserList fired');
     return this.http.get(`${this.baseUrl}/users`);
   }
 }

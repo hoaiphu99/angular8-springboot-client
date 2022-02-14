@@ -13,16 +13,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let users of userss | async">
-          <td>{{ users.username }}</td>
-          <td>{{ users.email }}</td>
-          <td>{{ users.roles }}</td>
+        <tr *ngFor="let user of users.data | async">
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.roles }}</td>
           <td>
-            <button (click)="deleteusers(users.user_id)" class="btn btn-danger">
+            <button (click)="deleteusers(user.user_id)" class="btn btn-danger">
               Delete
             </button>
             <button
-              (click)="usersDetails(users.user_id)"
+              (click)="usersDetails(user.user_id)"
               class="btn btn-info"
               style="margin-left: 10px"
             >
