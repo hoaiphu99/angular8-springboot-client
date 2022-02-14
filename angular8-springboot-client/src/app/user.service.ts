@@ -7,6 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   private baseUrl = 'http://localhost:8080/api/v1';
+  httpOptions = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
   constructor(private http: HttpClient) {}
 
   getUser(username: string): Observable<any> {
@@ -27,6 +33,6 @@ export class UserService {
 
   getUserList(): Observable<any> {
     console.log('getUserList fired');
-    return this.http.get(`${this.baseUrl}/users`);
+    return this.http.get(`${this.baseUrl}/users`, this.httpOptions);
   }
 }
